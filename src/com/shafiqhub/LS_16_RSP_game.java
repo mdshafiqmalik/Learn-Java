@@ -13,29 +13,29 @@ public class LS_16_RSP_game {
         while(i <= 6) {
             int randomNum = (int)Math.floor(Math.random() * 3.0D + 1.0D);
             System.out.println("\n");
-            char compOption = 32;
+            char compOption = ' ';
             if (randomNum == 1) {
-                compOption = 82;
+                compOption = 'R';
             } else if (randomNum == 2) {
-                compOption = 80;
+                compOption = 'P';
             } else if (randomNum == 3) {
-                compOption = 83;
+                compOption = 'S';
             }
 
             System.out.print("Enter RSP: ");
             Scanner mySelection = new Scanner(System.in);
             char userOption = mySelection.next().charAt(0);
-            boolean dr1 = (userOption == 'R' || userOption == 'r') && compOption == 82;
-            boolean dr2 = (userOption == 'P' || userOption == 'p') && compOption == 80;
-            boolean dr3 = (userOption == 'S' || userOption == 's') && compOption == 83;
+            boolean dr1 = (userOption == 'R' || userOption == 'r') && compOption == 'R';
+            boolean dr2 = (userOption == 'P' || userOption == 'p') && compOption == 'P';
+            boolean dr3 = (userOption == 'S' || userOption == 's') && compOption == 'S';
             boolean draw = dr1 || dr2 || dr3;
-            boolean won1 = (userOption == 'R' || userOption == 'r') && compOption == 83;
-            boolean won2 = (userOption == 'P' || userOption == 'p') && compOption == 82;
-            boolean won3 = (userOption == 'S' || userOption == 's') && compOption == 80;
+            boolean won1 = (userOption == 'R' || userOption == 'r') && compOption == 'S';
+            boolean won2 = (userOption == 'P' || userOption == 'p') && compOption == 'R';
+            boolean won3 = (userOption == 'S' || userOption == 's') && compOption == 'P';
             boolean won = won1 || won2 || won3;
-            boolean loss1 = (userOption == 'R' || userOption == 'r') && compOption == 80;
-            boolean loss2 = (userOption == 'P' || userOption == 'p') && compOption == 83;
-            boolean loss3 = (userOption == 'S' || userOption == 's') && compOption == 82;
+            boolean loss1 = (userOption == 'R' || userOption == 'r') && compOption == 'P';
+            boolean loss2 = (userOption == 'P' || userOption == 'p') && compOption == 'S';
+            boolean loss3 = (userOption == 'S' || userOption == 's') && compOption == 'R';
             boolean loss = loss1 || loss2 || loss3;
             if (draw) {
                 System.out.println("Status: Draw");
